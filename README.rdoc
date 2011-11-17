@@ -1,0 +1,67 @@
+= HashWithDotAccess
+
+== Install:
+
+    gem 'schrodinger', :git => "git://github.com/caleon/hash_with_dot_access.git"
+
+== Info:
+
+Kind of in the same vein as Rails' config method conventions, HashWithDotAccess is used to call for values of hash keys using dot-based method calls instead of hash[:key_name].
+
+So instead of hsh[:a] you are able to call hsh.a for the same value.
+
+The fundamentals of this class aren't very complicated, but the ideal use case involves pairing this functionality with a YAML file which stores an application's configuration values. Assuming a YAML structure as follows:
+
+    :emailer:
+      :from: no-reply@myapp.com
+      :support: support@myapp.com
+    :backgrounder: false # refer to resque
+    :limits:
+      # General text input for freeform
+      :freeform_text_length: 3000
+    :notifications:
+      :enabled: true
+      :subscriptions: true
+      :system: true
+
+... you can load the file into a HashWithDotAccess instance using the following:
+
+    myconfigs = YAML.load_file(
+                  File.expand_path(Rails.root + 'config/preferences.yml')
+                ).with_dot_access(true)
+
+    # (note the Hash#with_dot_access() appended to the call)
+
+... which then allows the following:
+
+    myconfigs.emailer.from
+    # => "no-reply@myapp.com"
+    
+    myconfigs.backgrounder?
+    # => false
+    
+    myconfigs.notifications
+    # => {:enabled => true, :subscriptions => true, :system => true}
+    
+    myconfigs.notifications?
+    #	=> true
+    
+    myconfigs.notifications.system?
+    # => false
+
+
+== Additional information
+
+=== Contributors
+
+We have a short list of valued contributors. Check them all at:
+
+http://github.com/caleon/hash_with_dot_access/contributors
+
+=== Maintainers
+
+* caleon (http://github.com/caleon)
+
+== License
+
+MIT License. Copyright 2011 caleon.

@@ -1,3 +1,3 @@
-module HashWithDotAccess
-  VERSION = "0.0.1"
+class HashWithDotAccess < Hash
+  VERSION = "0.0.2"
 end
