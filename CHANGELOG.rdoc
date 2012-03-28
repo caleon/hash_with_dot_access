@@ -1,4 +1,4 @@
-== 0.1.2
+== 0.1.3
 
 * Versioning was messe up before this, did not match CHANGELOG. Loosens constraints on ActiveSupport 3.1.1.
 
