@@ -1,3 +1,7 @@
+== 0.1.1
+
+* Versioning was messe up before this, did not match CHANGELOG. Loosens constraints on ActiveSupport 3.1.1.
+
 == 0.1.0
 
 * Serious effort at making a legit gem.

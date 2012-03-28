@@ -2,7 +2,7 @@
 
 == Install:
 
-    gem 'schrodinger', :git => "git://github.com/caleon/hash_with_dot_access.git"
+    gem 'hash_with_dot_access', :git => "git://github.com/caleon/hash_with_dot_access.git"
 
 == Info:
 
