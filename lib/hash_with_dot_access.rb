@@ -2,6 +2,6 @@
 
 require 'active_support'
 require 'active_support/core_ext/module/aliasing'
-require 'schrodinger'
+require 'schrodingers-cat'
 require 'hash_with_dot_access/hash'
 require 'hash_with_dot_access/hash_with_dot_access'
