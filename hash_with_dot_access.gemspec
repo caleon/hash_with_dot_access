@@ -18,6 +18,6 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport', '>= 3.1.0'
 
-  s.add_dependency 'schrodingers-cat', '~> 1.0.0'
+  s.add_dependency 'schrodingers-cat', '~> 1.0.1'
   s.add_development_dependency 'sqlite3'
 end
